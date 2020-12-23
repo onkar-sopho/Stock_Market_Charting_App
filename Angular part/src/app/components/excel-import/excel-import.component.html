@@ -1,0 +1,39 @@
+<!-- <h5>Import Stock price data</h5>
+<input type="file" id="customFile" (change)="selectFile($event)">
+<button class="btn btn-primary" [disabled]="!selectedFiles || admincheck || status" (click)="upload()">Save File</button>
+<button class="btn btn-primary" style="margin-left: 10px" (click)="downloadFile()">View File</button> -->
+
+
+<div class="container-fluid" style="margin-top: 40px;">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div style="padding: 5px;">
+                <h5>Import Stock price data</h5>
+                <p style="margin-top: 1rem;">Select excel file to be uploaded</p>
+            </div>
+            <div style="margin-top: 10px">
+                <input type="file" id="customFile" (change)="selectFile($event)">
+                <button class="btn btn-primary btn-sm" (click)="upload()">Upload</button>
+            </div>
+            <button class="btn btn-priamry btn-sm" (click)="viewSummary()">View summary</button>
+        </div>
+
+        <div class="col-md-6">
+            <div *ngIf="dataUploaded">
+                <div class="card" style="align-items: center;">
+                    <div class="card-title">
+                        <h6>Summary of Upload</h6>
+                    </div>
+                    <div class="card-body">
+                        <p>Company name: {{this.excelSummary.companyName}}</p>
+                        <p>Stock Exchange: {{this.excelSummary.stockExchangeName}}</p>
+                        <p>No. of records imported: {{this.excelSummary.totalRecords}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

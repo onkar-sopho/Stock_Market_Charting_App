@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="panel-heading" style="padding-top: 20px;">
+      <h5>Add new stock exchange</h5>
+    </div>
+  
+    <div class="card" style="width: 600px; padding: 20px; margin-top: 10px;">
+  
+      <form [formGroup]="addStockExchangeForm" (ngSubmit)="addStockExchange()">
+          
+          <div class="form-group">
+            <label for="stockExchangeName">Stock Exchange Name</label>
+            <input type="text" [formControlName]="'stockExchangeName'" class="form-control" name="stockExchangeName" id="stockExchangeName" [(ngModel)]="stockExchange.stockExchangeName">
+          </div>
+  
+          <div class="form-group">
+              <label for="stockExchangeDesc">Stock Exchange description</label>
+              <textarea [formControlName]="'stockExchangeDesc'" class="form-control" name="stockExchangeDesc" id="stockExchangeDesc" rows="3" [(ngModel)]="stockExchange.stockExchangeDesc"></textarea>
+          </div>
+  
+          <div class="form-group">
+              <label for="stockExchangeRemarks">Remarks</label>
+              <textarea [formControlName]="'stockExchangeRemarks'" class="form-control" name="stockExchangeRemarks" id="stockExchangeRemarks" rows="2" [(ngModel)]="stockExchange.stockExchangeRemarks"></textarea>
+          </div>
+
+          <div class="form-group">
+              <label for="contactAddress">Contact Address</label>
+              <textarea [formControlName]="'contactAddress'" class="form-control" name="contactAddress" id="contactAddress" rows="2" [(ngModel)]="stockExchange.contactAddress"></textarea>
+          </div>
+  
+          <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+  
+        </form>
+    </div>
+  </div>

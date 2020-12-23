@@ -1,0 +1,86 @@
+<div class="container-fluid">
+    <div class="panel-heading" style="padding-top: 20px;">
+        <h5>Update company</h5>
+    </div>
+    <div class="card" style="width: 600px; padding: 20px; margin-top: 10px;">
+        <form [formGroup]="updateCompanyForm" (ngSubmit)="updateCompany()">
+
+            <div class="form-group">
+                <label for="companyName">Company Name</label>
+                <input type="text" [formControlName]="'companyName'" class="form-control" name="companyName" id="companyName" [(ngModel)]="company.companyName">
+              </div>
+      
+              <div class="form-group">
+                  <label for="companyDesc">Company description</label>
+                  <textarea [formControlName]="'companyDesc'" class="form-control" name="companyDesc" id="companyDesc" rows="3" [(ngModel)]="company.companyDesc"></textarea>
+              </div>
+      
+              <div class="form-group">
+                <label for="ceo">CEO</label>
+                <input type="text" [formControlName]="'ceo'" class="form-control" name="ceo" id="ceo" [(ngModel)]="company.ceo">
+              </div>
+      
+              <div class="form-group">
+                  <label for="boardOfDirectors">Board of directors</label>
+                  <textarea [formControlName]="'boardOfDirectors'" class="form-control" name="boardOfDirectors" id="boardOfDirectors" rows="2" [(ngModel)]="company.boardOfDirectors"></textarea>
+              </div>
+      
+              <div class="form-group">
+                  <label for="turnover">Turnover</label>
+                  <input type="text" [formControlName]="'turnover'" class="form-control" name="turnover" id="turnover" [(ngModel)]="company.turnover">
+              </div>
+      
+              <div class="form-group">
+                  <label for="sectorName">Sector</label>
+                  <input type="text" [formControlName]="'sectorName'" class="form-control" name="sectorName" id="sectorName" [(ngModel)]="company.sectorName">
+              </div>  
+
+            <button type="submit" class="btn btn-success">Save changes</button>
+        </form>
+    </div>
+</div>  
+
+
+<!-- <div class="container-fluid">
+    <div class="panel-heading" style="padding-top: 20px;">
+        <h5>Update company</h5>
+    </div>
+    <div class="card" style="width: 600px; padding: 20px; margin-top: 10px;">
+        <form (ngSubmit)="updateCompany()">
+
+            <div class="form-group">
+                <label for="companyName">Company Name</label>
+                <input type="text" class="form-control" name="companyName" id="companyName">
+              </div>
+      
+              <div class="form-group">
+                  <label for="companyDesc">Company description</label>
+                  <textarea class="form-control" name="companyDesc" id="companyDesc" rows="3"></textarea>
+              </div>
+      
+              <div class="form-group">
+                <label for="ceo">CEO</label>
+                <input type="text" class="form-control" name="ceo" id="ceo">
+              </div>
+      
+              <div class="form-group">
+                  <label for="boardOfDirectors">Board of directors</label>
+                  <textarea class="form-control" name="boardOfDirectors" id="boardOfDirectors" rows="2"></textarea>
+              </div>
+      
+              <div class="form-group">
+                  <label for="turnover">Turnover</label>
+                  <input type="text" class="form-control" name="turnover" id="turnover">
+              </div>
+      
+              <div class="form-group">
+                  <label for="sectorName">Sector</label>
+                  <input type="text" class="form-control" name="sectorName" id="sectorName">
+              </div>  
+
+            <button type="submit" class="btn btn-success">Save changes</button>
+        </form>
+    </div>
+</div>   -->
+
+<!-- <h2>Update component</h2> -->

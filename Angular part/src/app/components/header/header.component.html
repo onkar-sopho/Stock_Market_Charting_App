@@ -1,0 +1,77 @@
+<!-- Top Navbar for sigup and login and profile section/ logout -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Stock Market Charting</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+
+        <div *ngIf="isLoggedIn" ngbDropdown class="float-right">
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button (click)="goToUserProfile()" ngbDropdownItem>Profile</button>
+              <button (click)="logout()" ngbDropdownItem>Logout</button>
+          </div>
+          <button class="userdetails" id="dropdownBasic1" ngbDropdownToggle>
+              Hi {{username}}
+          </button>
+        </div>    
+
+        <div *ngIf="!isLoggedIn">
+          <a routerLink="/signup" class="float-right sign-up mr-2 btn btn-success">Sign up</a>
+          <a routerLink="/login" class="float-right login mr-2 btn btn-primary">Login</a>
+        </div>
+      </ul>
+    </div>
+</nav>
+
+ <!-- Menu for ADMIN: -->
+
+<!-- <nav *ngIf="isLoggedIn && isAdmin" class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="#">Import Data</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Manage Company
+        </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/manage-company/add">Add company</a>
+            <a class="dropdown-item" routerLink="/manage-company/update">Update company</a>
+            <a class="dropdown-item" routerLink="/manage-company/delete">Delete company</a>
+          </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Manage Exchange
+        </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">View stock exchanges</a>
+            <a class="dropdown-item" href="#">Add stock exchanges</a>
+          </div>
+      </li>
+      <a class="nav-item nav-link" href="#">Update IPO details</a>
+    </div>
+  </div>
+</nav> -->
+
+<!-- Menu for USER: -->
+
+<!-- <nav *ngIf="isLoggedIn && !isAdmin" class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="#">IPO's</a>
+      <a class="nav-item nav-link" href="#">Compare companies</a>
+      <a class="nav-item nav-link" href="#">Compare sectors</a>
+      <a class="nav-item nav-link" href="#">Others</a>
+    </div>
+  </div>
+</nav> -->
